@@ -18,7 +18,7 @@ elif delta > 0:
 
 #arrendondar valores em 2 casas decimais
 
-#x1 = round(resultadoNegativo,2)
-#x2 = round(resultadoPositivo,2)
+  x1 = round(x1,2)
+  x2 = round(x2,2)
   print("x1", x1)
   print("x2", x2)
