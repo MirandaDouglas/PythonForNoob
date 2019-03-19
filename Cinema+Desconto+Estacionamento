@@ -1,0 +1,10 @@
+tickets = int(input("Quantas entradas deseja? "))
+discount = int(input("Qual é o seu desconto? "))
+
+priceTickets = (tickets*25)*discount/100
+
+parkin = (15)
+checkPark = int(input("Voce possuir carro no estacionamento?"))
+if checkPark == sim;
+  valorFinal = ()
+print(priceTickets)
