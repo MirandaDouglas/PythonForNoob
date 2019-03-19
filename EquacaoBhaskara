@@ -1,8 +1,9 @@
 print("ax²+bx+c")
 
-a = float(input("Valor de A"))
-b = float(input("Valor de B"))
-c = float(input("Valor de C"))
+a = float(input("Valor de A: "))
+b = float(input("Valor de B: "))
+c = float(input("Valor de C: "))
+
 
 delta = (b*b)-(4*a*c)
 if delta < 0:
@@ -14,5 +15,10 @@ elif delta > 0:
   bhaskaraNegativa = ((-b) - raizQ)
   resultadoPositivo = bhaskaraPositiva/2*a
   resultadoNegativo = bhaskaraNegativa/2*a
-  print("x1", resultadoNegativo)
-  print("x2", resultadoPositivo)
+
+#arrendondar valores em 2 casas decimais
+
+x1 = round(resultadoNegativo,2)
+x2 = round(resultadoPositivo,2)
+print("x1", x1)
+print("x2", x2)
