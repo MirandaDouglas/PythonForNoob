@@ -6,15 +6,13 @@ c = float(input("Valor de C"))
 
 delta = (b*b)-(4*a*c)
 if delta < 0:
-  print("Numeros Complexos")
-  
+  print('Numeros Complexos ')
+   
 elif delta > 0:
   raizQ = delta ** (1/2)
   bhaskaraPositiva = ((-b) + raizQ)
   bhaskaraNegativa = ((-b) - raizQ)
-
-resultadoPositivo = bhaskaraPositiva/2*a
-resultadoNegativo = bhaskaraNegativa/2*a
-
-print("x1", resultadoNegativo)
-print("x2", resultadoPositivo)
+  resultadoPositivo = bhaskaraPositiva/2*a
+  resultadoNegativo = bhaskaraNegativa/2*a
+  print("x1", resultadoNegativo)
+  print("x2", resultadoPositivo)
