@@ -1,0 +1,5 @@
+dias = int(input("Quantos dias deseja ficar com o carro?"))
+
+preco = (dias*100)
+
+print("O valor final sera de: R$", preco)
