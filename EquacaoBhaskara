@@ -13,12 +13,12 @@ elif delta > 0:
   raizQ = delta ** (1/2)
   bhaskaraPositiva = ((-b) + raizQ)
   bhaskaraNegativa = ((-b) - raizQ)
-  resultadoPositivo = bhaskaraPositiva/2*a
-  resultadoNegativo = bhaskaraNegativa/2*a
+  x1 = bhaskaraPositiva/2*a
+  x2 = bhaskaraNegativa/2*a
 
 #arrendondar valores em 2 casas decimais
 
-x1 = round(resultadoNegativo,2)
-x2 = round(resultadoPositivo,2)
-print("x1", x1)
-print("x2", x2)
+#x1 = round(resultadoNegativo,2)
+#x2 = round(resultadoPositivo,2)
+  print("x1", x1)
+  print("x2", x2)
