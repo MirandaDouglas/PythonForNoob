@@ -1,0 +1,9 @@
+nascimento = int(input("Qual seu ano de nascimento?"))
+anoAtual = int(input("Em que ano estamos?"))
+
+idade = (anoAtual-nascimento)
+
+if idade > 0:
+  print ("Sua idade é de:", idade)
+else:
+  print("Ano de nascimento incorreto")
