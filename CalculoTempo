@@ -1,0 +1,17 @@
+print("Calculadora de tempo")
+print("Qual o primeiro horario?")
+
+horas1 = float(input("Horas: "))
+minutos1 = float(input("Minutos: "))
+
+print("Qual o segundo horario?")
+
+horas2 = float(input("Horas: "))
+minutos2 = float(input("Minutos: "))
+
+horasAuxiliar = (horas1-horas2)
+minutosAuxiliar2 = (minutos1-minutos2)
+
+
+
+print()
