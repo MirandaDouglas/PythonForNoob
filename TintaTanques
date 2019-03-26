@@ -1,0 +1,13 @@
+alturaTanque = float(input('Qual é a altura do tanque: '))
+raioTanque = float(input('Qual é o raio do tanque: '))
+
+areaRaio = (2*3.14*raioTanque*(alturaTanque+raioTanque))
+latasTinta = (areaRaio/15)
+
+if areaRaio > 15:
+  
+
+valorLitro = 10
+valorPintura = (areaRaio*valorLitro)
+
+print('Valor da pintra é de ', valorPintura)
