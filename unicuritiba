@@ -1,0 +1,65 @@
+listaNintendo = []
+listaNintendo.append("Mario")
+listaNintendo.append("Luigi")
+listaNintendo.append("Yoshi")
+print(listaNintendo)
+
+listaMK = []
+listaMK.append("Liu Kang")
+listaMK.append("Jax")
+listaMK.append("Sonya")
+print(listaMK)
+
+listaJogos = []
+listaJogos.append(listaMK)
+listaJogos.append(listaNintendo)
+
+print(listaJogos)
+
+print(listaNintendo[0])
+listaNintendo.insert(1,'Peach')
+print(listaNintendo)
+
+del(listaNintendo[1:3])
+print(listaNintendo)
+
+print(listaJogos[0][1])
+
+
+#####################################################
+
+jogosMario = 'Super Mario World','Mario64','Mario Kart'
+
+res = 'Mario Kart' in jogosMario
+
+print(res)
+
+#determinar se existe um um TUPLA
+#listas sao mais lentas, tuplas sao mais simples e rapidas pra trabalhar
+
+#######################################################
+
+str1 = 'msg'
+str2 = 'msg'
+str3 = str1
+
+res = str1 == str2
+print(res)
+
+#comparacao de strings
+
+str1 = 'msg'
+str2 = 'msg'
+str3 = str1
+
+res = str1 is str2
+print(res)
+
+##########################################################
+
+== =! igualdade diferença
+not negacao
+or OU logico
+and E logico
+> >= maior maior igual
+< <= menor igual
