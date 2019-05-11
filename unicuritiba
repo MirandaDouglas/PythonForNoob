@@ -63,3 +63,125 @@ or OU logico
 and E logico
 > >= maior maior igual
 < <= menor igual
+
+##########################################################
+
+idade = int(input("Digite sua idade: "))
+
+
+if idade >= 18:
+  print("acesso autorizado")
+
+print('encerrado')
+
+##########################################################
+
+for i in range(5):
+  print(i)
+#conta comum
+for i in range(2,5):
+  print(i)
+#conta a partir de um numero
+for i in range(100,200,2):
+  print(i)
+#conta com pulo
+
+
+listaMK = []
+listaMK.append("Liu Kang")
+listaMK.append("Kitana")
+listaMK.append("Baraka")
+
+for i in listaMK[::-1]:
+  print(i)
+  
+  ################################################
+  
+  
+listaMK = ['Sony','Milena']
+listaMK.append("Liu Kang")
+listaMK.append("Kitana")
+listaMK.append("Baraka")
+listaMK.append("Jax")
+
+for i in listaMK:
+  print(i)
+  if i == 'Baraka':
+    print("Finish Him")
+    
+######################################################
+
+lista1 = [-20,10]
+lista2 = [10,-30]
+lista3 = [15,-12]
+lista4 = [-5,-12]
+lista5 = [-2,8]
+
+listaCoordenadas = (lista1,lista2,lista3,lista4,lista5)
+
+maior = listaCoordenadas[0]
+menor = listaCoordenadas[0]
+
+for i in listaCoordenadas:
+  if i[0] > maior[0]:
+    maior = i
+  if i[0] < menor[0]:
+    menor = i
+
+print('maior: ',maior)
+print('menor: ',menor)
+
+###############################################
+
+def soma(v1,v2,v3,v4):
+  resultado = v1 + v2 + v3 + v4
+  return resultado
+
+res = soma(10,20,30,40)
+print(res)
+
+#################################################
+
+def invert(str):
+  return str[::-1]
+
+nome = input('Digite seu nome: ')
+
+print(invert(nome))
+
+#####################################################
+
+class Cao:
+  def __init__(self,nome,idade):
+    self.nome = nome
+    self.idade = idade
+  def apresentarse(self):
+    if(self.idade<2):
+      print("Meu nome é,",self.nome,'auau')
+    else:
+      print("Meu nome é,",self.nome,'AuAu')
+
+
+cao1 = Cao('Rex',5)
+cao2 = Cao('Zeus',4)
+cao3 = Cao('Cadelo',1)
+
+cao1.apresentarse()
+print(cao2.idade)
+
+
+########################################
+import math
+
+def area(raio):
+  return math.pi*raio**2
+
+areas = []
+
+raios = [10,5,8,5.5,7.8]
+for r in raios:
+  areas.append(area(r))
+
+print(areas)
+
+print(list(map(area,raios)))
