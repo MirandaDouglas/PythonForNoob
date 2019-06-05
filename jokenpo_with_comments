@@ -1,0 +1,296 @@
+from random import randint  # ACIONA A BIBLIOTECA DE RANDON PARA DEIXAR ALEATORIO O COMANDO DA CPU CONTRA O JOGADOR#
+# LEITURA DAS LISTAS PARA CONTAGEM DE VITORIOS, DERROTAS E EMPATES NO HISTORICO#
+resultadosSolo = []  # LISTA DE RESULTADOS JOGADOR VS COMPUTADOR
+resultadoCPU = []  # LISTA DE RESULTADOS CPU
+escolhasSolo = []  # LISTA DO JOGADOR SOLO PARA ESCOLHAS FEITAS
+escolhasCPU = []  # LISTA DO CPU PARA ESCOLHAS FEITAS
+
+resultadoVitorias = []  # LISTA DE VITORIAS
+resultadoDerrotas = []  # LISTA DE DERROTAS
+resultadoEmpate = []  # LISTA DE EMPATES
+escolhaPayer1 = []  # LISTA DE ESCOLHAS DO PRIMEIRO JOGADOR
+escolhaPayer2 = []  # LISTA DE ESCOLHAS DO SEGUNDO JOGADOR
+# INDICE PARA SELEÇÃO DO MENU PRINCIPAL
+while True:
+    # MENU PRINCIPAL
+    print("  BEM VINDO AO JOKENPO")
+    print("-----------------------")
+    print("| 1  JOGADOR X CPU    |")
+    print("| 2 JOGADOR X JOGADOR |")
+    print("| 3    HISTORICO      |")
+    print("| 4      SAIR         |")
+    print("-----------------------")
+
+    menuPrincipal = int(input("Qual modo deseja: "))
+    if menuPrincipal == 1:
+        jogadorSolo = input("Qual o seu nome? ")
+        while True:  # LOOP PARA MENU DE SELECAO
+            cpu = randint(0, 2)  # RANDOMIZA 3 POSIÇÕES DO JOGO
+            listaJogo = ("Pedra", "Papel", "Tesoura")
+            contadorModoCpu = 0
+
+            print("-----------------------")
+            print("| 0      PEDRA        |")
+            print("| 1      PAPEL        |")
+            print("| 2     TESOURA       |")
+            print("| 3      SAIR         |")
+            print("-----------------------")
+
+            selecionar = int(input("Qual sua jogada? "))
+
+            # FUNCAO PARA SORTEIO RANDOMICO PADRONIZADO DO COMPUTADOR
+            def jokenpoMaquina():  # INICIO DA FUNCAO DE ESCOLHA RANDOMICA
+                print("-" * 26)
+                print("O computador R2-D2 escolheu: {}".format(listaJogo[cpu]))
+                print("O " + jogadorSolo + " escolheu: {}".format(listaJogo[selecionar]))
+                print("-" * 26)
+                return  # FIM DA FUNCAO
+
+            # CONDICOES APOS SELECAO DO MENU DE JOGO
+            if selecionar <= 2:  # SELECAO APENAS DE 0 - 2
+                if cpu == 0:
+                    jokenpoMaquina()
+                    contadorModoCpu = contadorModoCpu + 1
+                    escolhasCPU.append(0)
+                    if selecionar == 0:  # CONDICAO 0 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print("Empate!")
+                        resultadosSolo.append(0)
+                        escolhasSolo.append(0)
+                    elif selecionar == 1:  # CONDICAO 1 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print(jogadorSolo + " perdeu!")
+                        resultadosSolo.append(1)
+                        resultadoCPU.append(2)
+                        escolhasSolo.append(1)
+                    elif selecionar == 2:  # CONDICAO 2 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print(jogadorSolo + " venceu!")
+                        resultadosSolo.append(2)
+                        resultadoCPU.append(1)
+                        escolhasSolo.append(2)
+                    else:
+                        print("Operacao invalida")
+
+                elif cpu == 1:
+                    jokenpoMaquina()
+                    escolhasCPU.append(1)
+                    if selecionar == 0:  # CONDICAO 0 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print(jogadorSolo + " perdeu")
+                        resultadosSolo.append(1)
+                        resultadoCPU.append(2)
+                        escolhasSolo.append(0)
+                    elif selecionar == 1:  # CONDICAO 1 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print("Empate!")
+                        resultadosSolo.append(0)
+                        escolhasSolo.append(1)
+                    elif selecionar == 2:  # CONDICAO 2 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print(jogadorSolo + " venceu!")
+                        resultadosSolo.append(2)
+                        resultadoCPU.append(1)
+                        escolhasSolo.append(2)
+                    else:
+                        print("Operacao invalida")
+                elif cpu == 2:
+                    jokenpoMaquina()
+                    escolhasCPU.append(2)
+                    if selecionar == 0:  # CONDICAO 0 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print(jogadorSolo + " perdeu!")
+                        resultadosSolo.append(1)
+                        resultadoCPU.append(2)
+                        escolhasSolo.append(0)
+                    elif selecionar == 1:  # CONDICAO 1 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print(jogadorSolo + " venceu!")
+                        resultadosSolo.append(2)
+                        resultadoCPU.append(1)
+                        escolhasSolo.append(1)
+                    elif selecionar == 2:  # CONDICAO 2 DO PARAMETRO DO CPU
+                        contadorModoCpu = contadorModoCpu + 1
+                        print("Partida Numero ", contadorModoCpu)
+                        print("Empate!")
+                        resultadosSolo.append(0)
+                        escolhasSolo.append(2)
+                    else:
+                        print("Operacao invalida")
+
+            elif selecionar == 3:  # RETORNO PARA O MENU PRINCIPAL
+                break
+
+            else:
+                input("Opção incorreta. Pressione Enter para continuar.")
+
+    elif menuPrincipal == 2:  # MODO JOGADOR VS JOGADOR
+        while True:  # LOOP DO MENU
+            print("Sim - 1")
+            print("Nao - 2")
+            continuar = int(input("Deseja continuar jogando? "))  # SIM E NAO COLOCADOS FORA DO PRIMEIRO IF
+            if continuar == 2:  # RETORNO AO MENU PRINCIPAL
+                break
+            player1 = input("Jogador 1 qual é o seu nome? ")  # ENTRA DE VARIAVEL PARA OTIMIZACAO DO NOME
+            player2 = input("Jogador 2 qual é o seu nome? ")  # ENTRA DE VARIAVEL PARA OTIMIZACAO DO NOME
+
+            if continuar == 1:
+                while True:  # LOOP DO MENU
+                    print("-----------------------")  # MENU DE ESCOLHA
+                    print("| 0      PEDRA        |")
+                    print("| 1      PAPEL        |")
+                    print("| 2     TESOURA       |")
+                    print("| 3      SAIR         |")
+                    print("-----------------------")
+                    jogadaUm = int(input("Qual sua jogada," + player1 + "?"))  # LEITURA DA JOGADA DO JOGADOR 2
+                    print("\n" * 50)
+
+                    if jogadaUm == 3:
+                        break
+
+                    print("-----------------------")  # MENU DE ESCOLHA
+                    print("| 0      PEDRA        |")
+                    print("| 1      PAPEL        |")
+                    print("| 2     TESOURA       |")
+                    print("| 3      SAIR         |")
+                    print("-----------------------")
+                    jogadaDois = int(input("Qual sua jogada," + player2 + "?"))  # LEITURA DA JOGADA DO JOGADOR 2
+                    print("\n" * 50)
+                    if jogadaUm == 3:  # RETORNO AO MENU PRINCIPAL
+                        break
+
+                    if jogadaUm == jogadaDois:  # EMPATE ENTRE OS JOGADORES
+                        print("Isso é um empate ")
+                        escolhaPayer1.append(jogadaUm)  # SALVA A ESCOLHA NA LISTA
+                        escolhaPayer2.append(jogadaDois)  # SALVA A ESCOLHA NA LISTA
+                        resultadoEmpate.append(0)  # SALVA O RESULTADO NA LISTA
+
+                    elif jogadaUm == 0:
+                        escolhaPayer1.append(jogadaUm)  # SALVA A ESCOLHA NA LISTA
+                        escolhaPayer2.append(jogadaDois)  # SALVA A ESCOLHA NA LISTA
+                        if jogadaDois == 1:
+                            print("Jogador", player2, "VENCEU!")
+                            print("Pedra perde para Papel")
+                            resultadoVitorias.append(2)  # SALVA O RESULTADO NA LISTA
+                            resultadoDerrotas.append(1)  # SALVA O RESULTADO NA LISTA
+
+                        elif jogadaDois == 2:
+                            print("Jogador", player1, "VENCEU!")
+                            print("Pedra ganha de Tesoura")
+                            resultadoVitorias.append(1)  # SALVA O RESULTADO NA LISTA
+                            resultadoDerrotas.append(2)  # SALVA O RESULTADO NA LISTA
+
+                    elif jogadaUm == 1:
+                        escolhaPayer1.append(jogadaUm)  # SALVA A ESCOLHA NA LISTA
+                        escolhaPayer2.append(jogadaDois)  # SALVA A ESCOLHA NA LISTA
+                        if jogadaDois == 0:
+                            print("Jogador", player1, "VENCEU!")
+                            print("Papel ganha de Pedra")
+                            resultadoVitorias.append(1)  # SALVA O RESULTADO NA LISTA
+                            resultadoDerrotas.append(2)  # SALVA O RESULTADO NA LISTA
+
+                        elif jogadaDois == 2:
+                            print("Jogador", player2, "VENCEU!")
+                            print("Papel perde pra Tesoura")
+                            resultadoVitorias.append(2)  # SALVA O RESULTADO NA LISTA
+                            resultadoDerrotas.append(1)  # SALVA O RESULTADO NA LISTA
+
+                    elif jogadaUm == 2:
+                        escolhaPayer1.append(jogadaUm)  # SALVA A ESCOLHA NA LISTA
+                        escolhaPayer2.append(jogadaDois)  # SALVA A ESCOLHA NA LISTA
+                        if jogadaDois == 0:
+                            print("Jogador", player2, "VENCEU!")
+                            print("Tesoura ganha de Papel")
+                            resultadoVitorias.append(2)  # SALVA O RESULTADO NA LISTA
+                            resultadoDerrotas.append(1)  # SALVA O RESULTADO NA LISTA
+
+                        elif jogadaDois == 1:
+                            print("Jogador", player1, "VENCEU!")
+                            print("Tesoura perde pra pedra")
+                            resultadoVitorias.append(1)  # SALVA O RESULTADO NA LISTA
+                            resultadoDerrotas.append(2)  # SALVA O RESULTADO NA LISTA
+
+                    if jogadaUm == 3:
+                        break
+    elif menuPrincipal == 3:  # entrada no menu inicial do historico
+        while True:  # loop para o menu
+            print("------------------------------")  # menu historico
+            print("|  1 - JxJ-TAXA DE VITORIAS  |")
+            print("|     2 - JxCPU RESULTADOS   |")
+            print("|       3 -  SAIR            |")
+            print("------------------------------")
+
+            menuHistorico = int(input("Qual o modo deseja selecionar: "))
+            if menuHistorico == 1:
+                # sistema de contagem de resultados jogador vs jogador
+                contarVitoriasJogador1 = resultadoVitorias.count(1)  # variaveis para contagem de resultados
+                contarVitoriasJogador2 = resultadoVitorias.count(2)
+                contarDerrotasJogador1 = resultadoDerrotas.count(1)
+                contarDerrotasJogador2 = resultadoDerrotas.count(2)
+                contarEmpate = resultadoEmpate.count(0)
+                contarPedra1 = escolhaPayer1.count(0)
+                contarPedra2 = escolhaPayer2.count(0)
+                contarPapel1 = escolhaPayer1.count(1)
+                contarPapel2 = escolhaPayer2.count(1)
+                contarTesoura1 = escolhaPayer1.count(2)
+                contarTesoura2 = escolhaPayer2.count(2)
+                print("------------------------------------------")
+                print("|          RESULTADOS JOGADORES          |")
+                print("|                                        |")
+                print("|   JOGADOR 1               JOGADOR 2    |")
+                print("|                                        |")
+                print("| VITORIAS - ", contarVitoriasJogador1, "           VITORIAS - ", contarVitoriasJogador2, "|")
+                print("| DERROTAS - ", contarDerrotasJogador1, "           VITORIAS - ", contarDerrotasJogador2, "|")
+                print("|                                        |")
+                print("|                                        |")
+                print("| PEDRA =   ", contarPedra1, "            PEDRA =   ", contarPedra2, " |")
+                print("| PAPEL =   ", contarPapel1, "            PAPEL =   ", contarPapel2, " |")
+                print("| TESOURA = ", contarTesoura1, "            TESOURA = ", contarTesoura2, " |")
+                print("------------------------------------------")
+                input("Pressione Enter para continuar ")
+
+            elif menuHistorico == 2:
+                #  sistema para contagem unica de resultados e escolhas
+                contarVitoriasJogadorSolo = resultadosSolo.count(2)
+                contarDerrotasJogadorSolo = resultadosSolo.count(1)
+                contarEmpateSolo = resultadosSolo.count(0)
+                contarEscolhaSolo0 = escolhasSolo.count(0)
+                contarEscolhaSolo1 = escolhasSolo.count(1)
+                contarEscolhaSolo2 = escolhasSolo.count(2)
+                contarEscolhaCPU0 = escolhasCPU.count(0)
+                contarEscolhaCPU1 = escolhasCPU.count(1)
+                contarEscolhaCPU2 = escolhasCPU.count(2)
+                print("------------------------------------------")
+                print("|           RESULTADOS JOGADOR           |")
+                print("|                                        |")
+                print("|           VITORIAS = ", contarVitoriasJogadorSolo, "               |")
+                print("|           DERROTAS = ", contarDerrotasJogadorSolo, "               |")
+                print("|                                        |")
+                print("|   JOGADOR                    CPU       |")
+                print("| PEDRA =   ", contarEscolhaSolo0, "            PEDRA =   ", contarEscolhaCPU0, " |")
+                print("| PAPEL =   ", contarEscolhaSolo1, "            PAPEL =   ", contarEscolhaCPU1, " |")
+                print("| TESOURA = ", contarEscolhaSolo2, "            TESOURA = ", contarEscolhaCPU2, " |")
+                print("------------------------------------------")
+                input("Pressione Enter para continuar ")
+
+            elif menuHistorico == 3:
+                break
+
+            else:
+                menuHistorico = int(input("Esse comando nao existe digite novamente"))
+
+    elif menuPrincipal == 4:
+        print("Obrigado por jogar")
+        break
+    else:
+        input("Opção incorreta. Pressione Enter para continuar.")
+
+print("Volte sempre")
