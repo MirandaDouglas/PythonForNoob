@@ -27,7 +27,6 @@ while True:
         while True:  # LOOP PARA MENU DE SELECAO
             cpu = randint(0, 2)  # RANDOMIZA 3 POSIÇÕES DO JOGO
             listaJogo = ("Pedra", "Papel", "Tesoura")
-            contadorModoCpu = 0
 
             print("-----------------------")
             print("| 0      PEDRA        |")
@@ -36,7 +35,7 @@ while True:
             print("| 3      SAIR         |")
             print("-----------------------")
 
-            selecionar = int(input("Qual sua jogada? "))
+            selecionar = int(input("Qual sua jogada ?"))
 
             # FUNCAO PARA SORTEIO RANDOMICO PADRONIZADO DO COMPUTADOR
             def jokenpoMaquina():  # INICIO DA FUNCAO DE ESCOLHA RANDOMICA
@@ -50,27 +49,20 @@ while True:
             if selecionar <= 2:  # SELECAO APENAS DE 0 - 2
                 if cpu == 0:
                     jokenpoMaquina()
-                    contadorModoCpu = contadorModoCpu + 1
                     escolhasCPU.append(0)
                     if selecionar == 0:  # CONDICAO 0 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
                         print("Empate!")
                         resultadosSolo.append(0)
                         escolhasSolo.append(0)
                     elif selecionar == 1:  # CONDICAO 1 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
-                        print(jogadorSolo + " perdeu!")
-                        resultadosSolo.append(1)
-                        resultadoCPU.append(2)
-                        escolhasSolo.append(1)
-                    elif selecionar == 2:  # CONDICAO 2 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
-                        print(jogadorSolo + " venceu!")
+                        print(jogadorSolo + " Venceu !")
                         resultadosSolo.append(2)
                         resultadoCPU.append(1)
+                        escolhasSolo.append(1)
+                    elif selecionar == 2:  # CONDICAO 2 DO PARAMETRO DO CPU
+                        print(jogadorSolo + " Perdeu !")
+                        resultadosSolo.append(1)
+                        resultadoCPU.append(2)
                         escolhasSolo.append(2)
                     else:
                         print("Operacao invalida")
@@ -79,22 +71,16 @@ while True:
                     jokenpoMaquina()
                     escolhasCPU.append(1)
                     if selecionar == 0:  # CONDICAO 0 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
-                        print(jogadorSolo + " perdeu")
+                        print(jogadorSolo + " perdeu! ")
                         resultadosSolo.append(1)
                         resultadoCPU.append(2)
                         escolhasSolo.append(0)
                     elif selecionar == 1:  # CONDICAO 1 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
                         print("Empate!")
                         resultadosSolo.append(0)
                         escolhasSolo.append(1)
                     elif selecionar == 2:  # CONDICAO 2 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
-                        print(jogadorSolo + " venceu!")
+                        print(jogadorSolo + " ganhou!")
                         resultadosSolo.append(2)
                         resultadoCPU.append(1)
                         escolhasSolo.append(2)
@@ -104,22 +90,16 @@ while True:
                     jokenpoMaquina()
                     escolhasCPU.append(2)
                     if selecionar == 0:  # CONDICAO 0 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
-                        print(jogadorSolo + " perdeu!")
-                        resultadosSolo.append(1)
-                        resultadoCPU.append(2)
-                        escolhasSolo.append(0)
-                    elif selecionar == 1:  # CONDICAO 1 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
                         print(jogadorSolo + " venceu!")
                         resultadosSolo.append(2)
                         resultadoCPU.append(1)
+                        escolhasSolo.append(0)
+                    elif selecionar == 1:  # CONDICAO 1 DO PARAMETRO DO CPU
+                        print(jogadorSolo + " perdeu!")
+                        resultadosSolo.append(1)
+                        resultadoCPU.append(2)
                         escolhasSolo.append(1)
                     elif selecionar == 2:  # CONDICAO 2 DO PARAMETRO DO CPU
-                        contadorModoCpu = contadorModoCpu + 1
-                        print("Partida Numero ", contadorModoCpu)
                         print("Empate!")
                         resultadosSolo.append(0)
                         escolhasSolo.append(2)
@@ -249,6 +229,7 @@ while True:
                 print("|                                        |")
                 print("| VITORIAS - ", contarVitoriasJogador1, "           VITORIAS - ", contarVitoriasJogador2, "|")
                 print("| DERROTAS - ", contarDerrotasJogador1, "           VITORIAS - ", contarDerrotasJogador2, "|")
+                print("|               EMPATES - ", contarEmpate, "            |")
                 print("|                                        |")
                 print("|                                        |")
                 print("| PEDRA =   ", contarPedra1, "            PEDRA =   ", contarPedra2, " |")
@@ -273,6 +254,7 @@ while True:
                 print("|                                        |")
                 print("|           VITORIAS = ", contarVitoriasJogadorSolo, "               |")
                 print("|           DERROTAS = ", contarDerrotasJogadorSolo, "               |")
+                print("|            EMPATES - ", contarEmpateSolo, "               |")
                 print("|                                        |")
                 print("|   JOGADOR                    CPU       |")
                 print("| PEDRA =   ", contarEscolhaSolo0, "            PEDRA =   ", contarEscolhaCPU0, " |")
